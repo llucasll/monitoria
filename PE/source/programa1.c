@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 #include "programa.h"
-#include "data.h"
 
 Elemento ler(void){
 	Elemento retorno;
@@ -57,14 +56,23 @@ bool exec(short op){
 			break;
 			
 		case 1:
+			if(max())
+				if(count() >= max()){
+					printf("\nA pilha esta cheia!\n");
+					break;
+				}
 			add(ler());
 			break;
 			
 		case 2:
 			printSeparador(28);
 			
-			printf("  O elemento removido foi:\n");
-			escrever(rm());
+			if(count()>0){
+				printf("  O elemento removido foi:\n");
+				escrever(rm());
+			}
+			else
+				printf("  A lista jah esta vazia!\n");
 			
 			printSeparador(28);
 			break;

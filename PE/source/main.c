@@ -5,6 +5,7 @@
 int main(void){
 	short op;
 	
+	init();
 	do{
 		menu();
 		scanf("%hd", &op); // Half-Decimal

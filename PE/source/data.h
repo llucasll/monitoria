@@ -31,5 +31,7 @@ Elemento rm(void);
 
 // Conta os elementos
 int count(void);
+// Informa o máximo de elementos que o Conjunto pode guardar. 0 significa sem limite.
+int max(void);
 // Exibe todos os elementos, sem alterar a estrutura
 void view(void);
