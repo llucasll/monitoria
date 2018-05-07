@@ -10,4 +10,5 @@ int main(void){
 		menu();
 		scanf("%hd", &op); // Half-Decimal
 	} while(exec(op));
+	close();
 }

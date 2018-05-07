@@ -11,11 +11,6 @@
 Elemento pilha[MAX];
 short tam;
 
-// Ler um Elemento
-Elemento ler(void);
-// Escrever um Elemento
-void escrever(Elemento e);
-
 
 // Cria um conjunto vazio
 void new(void){

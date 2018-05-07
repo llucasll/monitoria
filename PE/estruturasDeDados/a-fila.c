@@ -11,11 +11,6 @@
 Elemento fila[MAX];
 short pri, tam; // Posição do primeiro Elemento dentro do Array, e tamanho da Fila
 
-// Ler um Elemento
-Elemento ler(void);
-// Escrever um Elemento
-void escrever(Elemento e);
-
 
 // Cria um conjunto vazio
 void new(void){
