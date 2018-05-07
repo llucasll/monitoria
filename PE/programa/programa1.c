@@ -58,7 +58,9 @@ bool exec(short op){
 		case 1:
 			if(max())
 				if(count() >= max()){
-					printf("\nA pilha esta cheia!\n");
+					printSeparador(28);
+					printf("\n  O Conjunto esta cheio!\n");
+					printSeparador(28);
 					break;
 				}
 			add(ler());
@@ -72,7 +74,7 @@ bool exec(short op){
 				escrever(rm());
 			}
 			else
-				printf("  A lista jah esta vazia!\n");
+				printf("  O Conjunto jah esta vazio!\n");
 			
 			printSeparador(28);
 			break;
@@ -106,10 +108,10 @@ bool exec(short op){
 				char resposta;
 			
 				printf("Voce tem certeza que deseja descartar todas as modicifacoes realizadas no Conjunto?\n");
-				printf("Digite \"S\": ");
+				printf("Digite \"s\": ");
 				scanf(" %c", &resposta);
 			
-				if(resposta == 'S'){
+				if(resposta == 's'){
 					printf("\n");
 					return false;
 				}

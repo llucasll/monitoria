@@ -1,7 +1,11 @@
+/*
+	Pilha implementada em Array
+*/
+
 #include <stdio.h>
 //#include <errno.h>
 
-#include "data.h"
+#include "../data.h"
 
 #define MAX 2
 Elemento pilha[MAX];

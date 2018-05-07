@@ -1,6 +1,6 @@
 #include <stdbool.h>
 
-#include "data.h"
+#include "../data.h"
 
 // Imprime o Menu de opcoes
 void menu(void);
