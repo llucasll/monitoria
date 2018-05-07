@@ -18,21 +18,21 @@ Node* inicio;
 // Cria um conjunto vazio
 void new(void){
 	close();
-	inicio = NULL;
+	inicio = (Node *) NULL;
 }
 
 // Carrega os dados de data.bin, se houver; senão, cria um conjunto vazio
 void init(void){
 	FILE *arq = fopen("data.bin", "r");
-	inicio = NULL;
+	inicio = (Node *) NULL;
 	
-	if(arq!=NULL){
+	if(arq != (FILE *)NULL){
 		Elemento e;
 		fread(&e, sizeof(Elemento), 1, arq);
 		if(!feof(arq)){
-			inicio = malloc(sizeof(Elemento));
+			inicio = (Node *) malloc(sizeof(Elemento));
 			inicio->e = e;
-			inicio->prox = NULL;
+			inicio->prox = (Node *) NULL;
 			
 			Node* tmp = inicio;
 			while(true){
@@ -40,11 +40,11 @@ void init(void){
 				if(feof(arq))
 					break;
 				else{
-					tmp->prox = malloc(sizeof(Elemento));
+					tmp->prox = (Node *) malloc(sizeof(Elemento));
 					tmp = tmp->prox;
 					
 					tmp->e = e;
-					tmp->prox = NULL;
+					tmp->prox = (Node *) NULL;
 				}
 			}
 		}
@@ -57,11 +57,11 @@ void init(void){
 bool save(void){
 	FILE *arq = fopen("data.bin", "w");
 	
-	if(arq == NULL) return true;
+	if(arq == (FILE *)NULL) return true;
 	
 	else{
 		Node* tmp = inicio;
-		while(tmp!=NULL){
+		while(tmp != (Node *)NULL){
 			if(fwrite(&tmp->e, sizeof(Elemento), 1, arq) != 1){
 				perror ("The following error occurred");
 				return true; // Erro no fwrite
@@ -78,10 +78,10 @@ bool save(void){
 void close(void){
 	Node* tmp = inicio;
 	
-	while(tmp!=NULL){
+	while(tmp != (Node *)NULL){
 		inicio = inicio->prox;
 		
-		tmp->prox = NULL;
+		tmp->prox = (Node *)NULL;
 		free(tmp);
 		
 		tmp = inicio;
@@ -91,7 +91,7 @@ void close(void){
 
 // Adiciona um elemento
 void add(Elemento e){
-	Node* tmp = malloc(sizeof(Elemento));
+	Node* tmp = (Node *) malloc(sizeof(Elemento));
 	tmp->e = e;
 	tmp->prox = inicio;
 	inicio = tmp;
@@ -103,7 +103,7 @@ Elemento rm(void){
 	Node* tmp = inicio;
 	inicio = inicio->prox;
 	
-	tmp->prox = NULL;
+	tmp->prox = (Node *) NULL;
 	free(tmp);
 	return e;
 }
@@ -114,7 +114,7 @@ int count(void){
 	Node* tmp = inicio;
 	int tam=0;
 	
-	while(tmp!=NULL){
+	while(tmp != (Node *)NULL){
 		tmp = tmp->prox;
 		tam++;
 	}
@@ -131,7 +131,7 @@ void view(void){
 	printf("Total de itens: %hd\n\n",count()); // Half-Decimal
 	
 	Node* tmp = inicio;
-	while(tmp!=NULL){
+	while(tmp != (Node *) NULL){
 		escrever(tmp->e);
 		printf("\n");
 		tmp = tmp->prox;

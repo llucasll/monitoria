@@ -28,7 +28,7 @@ void init(void){
 	FILE *arq = fopen("data.bin", "r");
 	
 	tam = 0;
-	if(arq!=NULL){
+	if(arq != (FILE *)NULL){
 		while(true){
 			fread(fila+tam, sizeof(Elemento), 1, arq);
 			if(feof(arq))
@@ -56,7 +56,7 @@ void init(void){
 bool save(void){
 	FILE *arq = fopen("data.bin", "w");
 	
-	if(arq == NULL) return true;
+	if(arq == (FILE *)NULL) return true;
 	
 	else{
 		int i;
