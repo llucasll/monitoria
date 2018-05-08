@@ -36,7 +36,7 @@ void printSeparador(short tam){
 void menu(void){
 	printf("\n");
 	printf("Digite uma opcao:\n\n");
-	printf("0 - Comecar um Conjunto vazio;\n");
+	printf("0 - Comecar um novo Conjunto, vazio;\n");
 	printf("1 - Inserir novo elemento;\n");
 	printf("2 - Obter (e remover) elemento;\n");
 	printf("3 - Exibir todos os elementos;\n");
@@ -52,7 +52,21 @@ bool exec(short op){
 	
 	switch(op){
 		case 0:
-			new();
+			if(count()==0);
+			else{
+				// Chaves para definir novo escopo, e poder declarar essa var, que soh faz sentido aqui
+				char resposta;
+			
+				printf("Voce tem certeza que deseja descartar todas as modificacoes realizadas no Conjunto?\n");
+				printf("Digite \"s\": ");
+				scanf(" %c", &resposta);
+			
+				if(resposta == 's'){
+					printf("\n");
+					new();
+				}
+			}
+			
 			break;
 			
 		case 1:
@@ -67,16 +81,19 @@ bool exec(short op){
 			break;
 			
 		case 2:
-			printSeparador(28);
 			
 			if(count()>0){
+				printSeparador(28);
 				printf("  O elemento removido foi:\n");
 				escrever(rm());
+				printSeparador(28);
 			}
-			else
+			else{
+				printSeparador(30);
 				printf("  O Conjunto jah esta vazio!\n");
+				printSeparador(30);
+			}
 			
-			printSeparador(28);
 			break;
 			
 		case 3:
@@ -107,7 +124,7 @@ bool exec(short op){
 				// Chaves para definir novo escopo, e poder declarar essa var, que soh faz sentido aqui
 				char resposta;
 			
-				printf("Voce tem certeza que deseja descartar todas as modicifacoes realizadas no Conjunto?\n");
+				printf("Voce tem certeza que deseja descartar todas as modificacoes realizadas no Conjunto?\n");
 				printf("Digite \"s\": ");
 				scanf(" %c", &resposta);
 			

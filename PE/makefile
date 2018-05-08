@@ -1,6 +1,9 @@
 mensagem:
 	@echo
-	@echo Informe também qual dos arquivos contidos em estruturasDeDados você deseja utilizar \(sem a extensão\)
+	@echo ESCOLHA UMA DAS ESTRUTURAS \(EM \"estruturasDeDados\/\", SEM A EXTENSÃO\)\:
+	@echo
+	@echo | ls -1 estruturasDeDados
+	@echo
 	@echo Exemplo\: $ make a-fila
 	@echo
 	

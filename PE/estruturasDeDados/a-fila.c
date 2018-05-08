@@ -36,7 +36,7 @@ void init(void){
 			else
 				tam++;
 			
-			// A fila não pode ter mais do que TAM elementos!
+			// A fila não pode ter mais do que MAX elementos!
 			if(tam==MAX){
 				Elemento e;
 				fread(&e, sizeof(Elemento), 1, arq);
